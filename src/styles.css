@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Color Theme Swatches in Hex */
+.cor1 { color: #A62D4D; }
+.cor2 { color: #D97E96; }
+.cor3 { color: #BF8F9C; }
+.cor4 { color: #F2F2F2; }
+.cor5 { color: #8C1B1B; }
+
+
+
