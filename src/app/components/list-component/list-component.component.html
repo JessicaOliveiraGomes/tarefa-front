@@ -1,26 +1,32 @@
+<div class="row g-4 justify-content-evenly m-5 ">
+  <div *ngFor="let agrupamento of agrupamentoTarefas" class="col-3">
 
-<div class=" row">
-<div *ngFor="let agrupamento of agrupamentoTarefas" class="agrupamento   col-2">
+    <div cdkDropListGroup class="box-list">
+      <div class="p-4">
+        <h2> {{agrupamento.lista}} </h2>
 
-  <div cdkDropListGroup class="box-list">
-    <div class="">
-      <h2> {{agrupamento.lista}} </h2>
+        <div class="d-grid gap-5">
+          <button class="btn btn-light" type="button">Button</button>
+        </div>
 
-      <div cdkDropList [cdkDropListData]="agrupamento.tasks" class="example-list" (cdkDropListDropped)="drop($event)" (id)="agrupamento.lista">
-        <div class="example-box" *ngFor="let tarefa of agrupamento.tasks" cdkDrag>
-          <mat-checkbox (click)="movetarefaDone(agrupamento, tarefa)">{{tarefa.nomeTarefa}}</mat-checkbox></div>
+        <div cdkDropList [cdkDropListData]="agrupamento.tasks" (cdkDropListDropped)="drop($event)"
+          (id)="agrupamento.lista">
+          <div class="box" *ngFor="let tarefa of agrupamento.tasks" cdkDrag>
+            <mat-checkbox (click)="movetarefaDone(agrupamento, tarefa)">{{tarefa.nomeTarefa}}</mat-checkbox>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="">
-      <h2>Concluído</h2>
+      <div class="p-4">
+        <h2>Concluído</h2>
 
-      <div cdkDropList [cdkDropListData]="agrupamento.done" class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let dones of agrupamento.done" cdkDrag>
-          <mat-checkbox (click)="movetarefaTodo(agrupamento, dones)" [(ngModel)]="dones.checked">{{dones.nomeTarefa}}</mat-checkbox></div>
+        <div cdkDropList [cdkDropListData]="agrupamento.done" (cdkDropListDropped)="drop($event)">
+          <div class="box" *ngFor="let dones of agrupamento.done" cdkDrag>
+            <mat-checkbox (click)="movetarefaTodo(agrupamento, dones)"
+              [(ngModel)]="dones.checked">{{dones.nomeTarefa}}</mat-checkbox>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-</div>
 </div>
