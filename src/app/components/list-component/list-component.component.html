@@ -3,13 +3,17 @@
 
     <div cdkDropListGroup class="box-list">
       <div class="p-4">
-        <h2> {{agrupamento.lista}} </h2>
+        <h2> {{agrupamento.lista}} 
+          <button  class="btn btn-outline" role="button" type="button" >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </h2>
 
         <div class="d-grid gap-5">
-          <button class="btn btn-light" type="button">Button</button>
+          <button class="btn btn-outline-danger" role="button" type="button" (click)="openDialog()"> + Adiconar tarefa</button>
         </div>
 
-        <div cdkDropList [cdkDropListData]="agrupamento.tasks" (cdkDropListDropped)="drop($event)"
+        <div cdkDropList [cdkDropListData]="agrupamento.tasks"(cdkDropListDropped)="drop($event)"
           (id)="agrupamento.lista">
           <div class="box" *ngFor="let tarefa of agrupamento.tasks" cdkDrag>
             <mat-checkbox (click)="movetarefaDone(agrupamento, tarefa)">{{tarefa.nomeTarefa}}</mat-checkbox>

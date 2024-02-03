@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TarefaServiceService } from './../../service/tarefa-service.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ITarefa } from 'src/app/model/Itarefa';
+import { MatDialog } from '@angular/material/dialog';
+import { FormComponentComponent } from '../form-component/form-component.component';
 
 
 
@@ -17,7 +19,7 @@ export class ListComponentComponent implements OnInit {
   public tarefa: any[] = [];
   public agrupamentoTarefas: any[] = [];
 
-  constructor(public tarefaServiceService:TarefaServiceService){
+  constructor(public tarefaServiceService:TarefaServiceService,     public dialog: MatDialog){
     
   }
 
@@ -90,6 +92,14 @@ export class ListComponentComponent implements OnInit {
       if (index > -1) {
         agrumaneto.done.splice(index, 1);   
       }
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(FormComponentComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 

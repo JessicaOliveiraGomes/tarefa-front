@@ -13,13 +13,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DragDropModule} from '@angular/cdk/drag-drop';
+import { FormComponentComponent } from './components/form-component/form-component.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponentComponent,
-    MenuComponentComponent
+    MenuComponentComponent,
+    FormComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,13 @@ import { DragDropModule} from '@angular/cdk/drag-drop';
     FormsModule,
     MatCheckboxModule,
     DragDropModule,
-  
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
