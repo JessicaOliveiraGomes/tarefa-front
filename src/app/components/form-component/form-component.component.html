@@ -1,8 +1,8 @@
-<div class="card text-center element-center m-5 " style="width: 50%; border-radius: 4px;">
-    <div class="card-header" style="background-color:#D97E96; color:#F2F2F2;"> Adicionar tarefa </div>
+<div class="card text-center" style="width: 100%; border-radius: 20px; ">
+    <div class="card-header" style="border-radius: 20px 20px 0px 0px; background-color:#D97E96; color: white;"> Adicionar tarefa </div>
     <div class="Card-body">
         <form [formGroup]="form">
-            <mat-form-field class="placeholder" style="width: 80%;">
+            <mat-form-field class="placeholder mt-4" style="width: 80%;">
                 <input matInput placeholder="Nome da Tarefa" formControlName="nomeTarefa">
             </mat-form-field>
             <mat-form-field class="placeholder" style="width: 80%;">
@@ -16,12 +16,12 @@
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
-            <mat-form-field class="placeholder" style="width: 80%;">
+            <mat-form-field class="placeholder mt-2" style="width: 80%;">
                 <input matInput placeholder="Lista" formControlName="lista">
             </mat-form-field>
 
             <div>
-                <mat-dialog-actions class="d-grid gap-2 d-md-flex justify-content-md-center m-5">
+                <mat-dialog-actions class="d-grid gap-2 d-md-flex justify-content-md-center m-2">
                     <button class="btn btn-outline-danger" role="button" type="button"
                         (click)="onSubmit()">Salvar</button>
                     <button mat-button mat-dialog-close class="btn btn-outline-danger" role="button"

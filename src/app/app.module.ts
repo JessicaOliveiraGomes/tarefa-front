@@ -19,7 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from './components/dialog/dialog.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -28,7 +28,6 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ListComponentComponent,
     MenuComponentComponent,
     FormComponentComponent,
-    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +44,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
-   
+    MatDialogModule,
+    MatMenuModule
     
   ],
   providers: [],
