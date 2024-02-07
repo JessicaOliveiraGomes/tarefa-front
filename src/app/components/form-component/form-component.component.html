@@ -1,4 +1,3 @@
-
 <div class="card text-center element-center m-5 " style="width: 50%; border-radius: 4px;">
     <div class="card-header" style="background-color:#D97E96; color:#F2F2F2;"> Adicionar tarefa </div>
     <div class="Card-body">
@@ -21,13 +20,14 @@
                 <input matInput placeholder="Lista" formControlName="lista">
             </mat-form-field>
 
-            <div >
+            <div>
                 <mat-dialog-actions class="d-grid gap-2 d-md-flex justify-content-md-center m-5">
-                <button class="btn btn-outline-danger" role="button" type="button" (click)="onSubmit()">Salvar</button>
-                <button mat-button mat-dialog-close class="btn btn-outline-danger" role="button" type="button">Cancelar</button>
-            </mat-dialog-actions>
-              </div>
-              
+                    <button class="btn btn-outline-danger" role="button" type="button"
+                        (click)="onSubmit()">Salvar</button>
+                    <button mat-button mat-dialog-close class="btn btn-outline-danger" role="button"
+                        type="button">Cancelar</button>
+                </mat-dialog-actions>
+            </div>
         </form>
     </div>
 </div>
