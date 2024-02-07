@@ -33,10 +33,6 @@ export class FormComponentComponent implements OnInit {
     });
   }
 
-  onCancel() {
-    throw new Error('Method not implemented.');
-  }
-
   onSubmit() {
 
 

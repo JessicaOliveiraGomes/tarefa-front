@@ -21,14 +21,13 @@
                 <input matInput placeholder="Lista" formControlName="lista">
             </mat-form-field>
 
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center m-5">
+            <div >
+                <mat-dialog-actions class="d-grid gap-2 d-md-flex justify-content-md-center m-5">
                 <button class="btn btn-outline-danger" role="button" type="button" (click)="onSubmit()">Salvar</button>
-                <button class="btn btn-outline-danger" role="button" type="button" (click)="onCancel()">Cancelar</button>
+                <button mat-button mat-dialog-close class="btn btn-outline-danger" role="button" type="button">Cancelar</button>
+            </mat-dialog-actions>
               </div>
-
-              <mat-dialog-actions>
-                <button mat-button mat-dialog-close>Close</button>
-              </mat-dialog-actions>
+              
         </form>
     </div>
 </div>
