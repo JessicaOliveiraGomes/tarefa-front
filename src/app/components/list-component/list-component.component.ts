@@ -15,13 +15,15 @@ import { FormComponentComponent } from '../form-component/form-component.compone
   styleUrls: ['./list-component.component.css'],
 })
 export class ListComponentComponent implements OnInit {
-
   @Input()
   public tarefa: any[] = [];
 
   public agrupamentoTarefas: any[] = [];
 
-  constructor(public tarefaServiceService: TarefaServiceService, public dialog: MatDialog) {}
+  constructor(
+    public tarefaServiceService: TarefaServiceService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.inicializarTodos();
@@ -31,8 +33,10 @@ export class ListComponentComponent implements OnInit {
     this.agrupamentoTarefas = [];
     this.tarefaServiceService.buscar().subscribe((data) => {
       data.forEach((taf) => {
-        if (this.agrupamentoTarefas.filter((grup) => grup.lista == taf.lista)
-          .length > 0) {
+        if (
+          this.agrupamentoTarefas.filter((grup) => grup.lista == taf.lista)
+            .length > 0
+        ) {
           let index = this.agrupamentoTarefas.findIndex(
             (agr) => agr.lista == taf.lista
           );
@@ -111,31 +115,30 @@ export class ListComponentComponent implements OnInit {
     }
   }
 
-
-
   openDialog() {
-    const dialogRef = this.dialog.open(FormComponentComponent, {data:null});
+    const dialogRef = this.dialog.open(FormComponentComponent, { data: null });
     dialogRef.afterClosed().subscribe((result) => {
       this.inicializarTodos();
     });
   }
 
   openDialogWithData(tarefa: ITarefa) {
-    const dialogRef = this.dialog.open(FormComponentComponent, {data:tarefa});
+    const dialogRef = this.dialog.open(FormComponentComponent, {
+      data: tarefa,
+    });
     dialogRef.afterClosed().subscribe((result) => {
       this.inicializarTodos();
     });
   }
 
-  excluir(id:number){
+  excluir(id: number) {
     this.tarefaServiceService.excluir(id).subscribe(
-      data=>{
+      (data) => {
         this.inicializarTodos();
       },
-      erro=>{
+      (erro) => {
         alert('Erro ao excluir');
       }
-    )
+    );
   }
-
 }

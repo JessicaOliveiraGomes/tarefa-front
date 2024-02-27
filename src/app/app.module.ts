@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { FormComponentComponent } from './components/form-component/form-component.component';
@@ -20,6 +20,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { AuthInterceptor } from './inteceptors/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import {MatMenuModule} from '@angular/material/menu';
     ListComponentComponent,
     MenuComponentComponent,
     FormComponentComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatMenuModule
     
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

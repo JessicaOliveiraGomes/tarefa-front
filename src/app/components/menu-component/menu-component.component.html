@@ -14,32 +14,46 @@
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
+                <div class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <mat-icon>account_circle</mat-icon>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-outline-primary"
+                            role="button" data-bs-dismiss="offcanvas" aria-label="Close"
+                                    (click)="OpenLogin()">
+                                    <span>Login</span>
+                                </button></li>
+                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-primary"
+                                    role="button" data-bs-dismiss="offcanvas" aria-label="Close" (click)="logout()">
+                                    <mat-icon>exit_to_app</mat-icon>
+                                    Logout
+                                </button></li>
+                    </ul>
+                </div>
+                
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+                    <li class="nav-item m-2">
+                        <button type="button" class="btn btn-outline-danger " role="button" data-bs-dismiss="offcanvas"
+                            aria-label="Close" (click)="openDialog()">
+                            <mat-icon>add_circle_outline</mat-icon>
+                            <span class="m-2">Adicionar tarefa</span>
+                        </button>
+                    </li>
+                    <li class="nav-item m-2">
+                        <button type="button" class="btn btn-outline-danger" role="button" data-bs-dismiss="offcanvas"
+                            aria-label="Close" (click)="openDialog()">
+                            <mat-icon>create</mat-icon>
+                            <span class="m-2">Editar tarefa</span>
 
-                    </li>
-                    <li class="nav-item m-2">
-                        <button type="button" class="btn btn-outline-danger" role="button" data-bs-dismiss="offcanvas"
-                            aria-label="Close" (click)="openDialog()">
-                            <span>Adicionar tarefa</span>
                         </button>
                     </li>
                     <li class="nav-item m-2">
                         <button type="button" class="btn btn-outline-danger" role="button" data-bs-dismiss="offcanvas"
                             aria-label="Close" (click)="openDialog()">
-                            <span>Editar tarefa</span>
-                        </button>
-                    </li>
-                    <li class="nav-item m-2">
-                        <select class="form-select">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <button type="button" class="btn btn-outline-danger" role="button" data-bs-dismiss="offcanvas"
-                            aria-label="Close" (click)="openDialog()">
-                            <span>Excluir tarefa</span>
+                            <mat-icon>delete</mat-icon>
+                            <span class="m-2">Excluir tarefa</span>
                         </button>
                     </li>
                 </ul>
@@ -47,6 +61,13 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-danger" type="submit">Search</button>
                 </form>
+            </div>
+            <div fxLayout="row" fxShow="false" fxShow.gt-sm class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-danger" role="button" data-bs-dismiss="offcanvas"
+                    aria-label="Close" (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    Sair
+                </button>
             </div>
         </div>
     </div>

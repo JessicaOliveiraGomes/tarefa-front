@@ -1,5 +1,5 @@
-<div class="row g-4 justify-content-evenly m-5 ">
-  <div *ngFor="let agrupamento of agrupamentoTarefas" class="col-3" style="min-width: 300px; max-width: fit-content;"> 
+<div class="row g-4 m-5" style="display: flex;">
+  <div *ngFor="let agrupamento of agrupamentoTarefas" class="col-3" style="min-width: 300px; max-width: fit-content;">
 
     <div cdkDropListGroup class="box-list">
       <div class="p-4">
@@ -7,11 +7,6 @@
           <button class="btn btn-outline" type="button"
             (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button>
         </h2>
-        
-        <div  class="d-grid gap-2">
-          <button class="btn btn-outline-danger" type="button"
-            (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon> Adicionar Tarefa </button>
-        </div>
 
         <div cdkDropList [cdkDropListData]="agrupamento.tasks" (cdkDropListDropped)="drop($event)"
           (id)="agrupamento.lista">
@@ -20,7 +15,7 @@
             <button class="btn btn-outline" (click)="openDialogWithData(tarefa)">
               <mat-icon>create</mat-icon>
             </button>
-            <button class="btn btn-outline" (click)="excluir(tarefa.id)" id="liveAlertBtn">
+            <button class="btn btn-outline" (click)="excluir(tarefa.id)">
               <mat-icon>delete</mat-icon>
             </button>
           </div>
@@ -32,12 +27,12 @@
 
         <div cdkDropList [cdkDropListData]="agrupamento.done" (cdkDropListDropped)="drop($event)">
           <div class="box" *ngFor="let dones of agrupamento.done" cdkDrag>
-            <mat-checkbox (click)="movetarefaTodo(agrupamento, dones)"
-              [(ngModel)]="dones.checked">{{dones.nomeTarefa}}</mat-checkbox>
-            <button class="btn btn-outline justify-content-md-end" (click)="openDialogWithData(dones)">
+            <mat-checkbox (click)="movetarefaTodo(agrupamento, dones)" [(ngModel)]="dones.checked"> {{dones.nomeTarefa}}
+            </mat-checkbox>
+            <button class="btn btn-outline" (click)="openDialogWithData(dones)">
               <mat-icon>create</mat-icon>
             </button>
-            <button class="btn btn-outline justify-content-md-end" (click)="excluir(dones.id)">
+            <button class="btn btn-outline" (click)="excluir(dones.id)">
               <mat-icon>delete</mat-icon>
             </button>
           </div>

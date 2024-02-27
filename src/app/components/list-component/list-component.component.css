@@ -7,7 +7,7 @@
 .box {
   padding: 10px;
   cursor: move;
-
+  white-space: unset;
 }
 
 .cdk-drag-preview {
@@ -16,10 +16,12 @@
   box-shadow: 0 5px 5px -3px #BF8F9C,
               0 8px 10px 1px #D97E96,
               0 3px 14px 2px #BF8F9C;
-}
+             
 
 .cdk-drag-placeholder {
   opacity: 0;
+  
+}
 }
 
 .cdk-drag-animating {
