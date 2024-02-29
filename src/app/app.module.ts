@@ -10,16 +10,27 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DragDropModule} from '@angular/cdk/drag-drop';
+import { FormComponentComponent } from './components/form-component/form-component.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+import { AuthInterceptor } from './inteceptors/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponentComponent,
-    MenuComponentComponent
+    MenuComponentComponent,
+    FormComponentComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +43,15 @@ import { DragDropModule} from '@angular/cdk/drag-drop';
     FormsModule,
     MatCheckboxModule,
     DragDropModule,
-  
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule,
+    MatMenuModule
+    
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

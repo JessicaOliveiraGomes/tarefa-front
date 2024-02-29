@@ -1,33 +1,13 @@
-
-.agrupamento {
-  max-width: 100%;
-  margin: 30px;
-  display: inline-block;
-  vertical-align: top;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  float: left;
+.box-list{
+  margin-top: 20px;
+  box-shadow: 10px 10px 10px 10px #bf8f9c88;
+  border-radius: 20px;
 }
 
-.example-list {
-  box-shadow: 3px #D97E96; 
-  min-height: 60px;
-  border-radius: 4px;
-  overflow: hidden;
-  display: block;
-}
-
-.example-box {
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+.box {
+  padding: 10px;
   cursor: move;
-
-  font-size: 14px;
+  white-space: unset;
 }
 
 .cdk-drag-preview {
@@ -36,10 +16,12 @@
   box-shadow: 0 5px 5px -3px #BF8F9C,
               0 8px 10px 1px #D97E96,
               0 3px 14px 2px #BF8F9C;
-}
+             
 
 .cdk-drag-placeholder {
   opacity: 0;
+  
+}
 }
 
 .cdk-drag-animating {
@@ -52,23 +34,4 @@
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-
-.list{
-  width: 25%;
-  margin: 10px 10px 10px 10px;
-  padding: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  
-}
-
-.box-list{
-
-  margin: 10px;
-  box-shadow: 3px 15px 15px 15px #bf8f9c2d;
-  border-radius: 10px;
-
 }

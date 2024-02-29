@@ -1,21 +1,59 @@
-<p>
-    <mat-toolbar>
-        <span>Tarefas</span>
-    </mat-toolbar>
-</p>
-
-<p>
-    <mat-toolbar>
-        <button mat-icon-button>
-            <mat-icon>menu</mat-icon>
+<nav class="navbar navbar-dark fixed-top " style="background-color: #D97E96; ">
+    <div class="container-fluid">
+        <a class="navbar-brand"> TAREFAS </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <span>Minhas Listas</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-        </button>
-    </mat-toolbar>
-</p>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+            style="background-color: #F2F2F2; border-radius: 10px 0px 0px 10px ;">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Lista de Tarefas</h5>
+                <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <mat-icon>account_circle</mat-icon>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-outline-primary"
+                            role="button" data-bs-dismiss="offcanvas" aria-label="Close"
+                                    (click)="OpenLogin()">
+                                    <span>Login</span>
+                                </button></li>
+                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-primary"
+                                    role="button" data-bs-dismiss="offcanvas" aria-label="Close" (click)="logout()">
+                                    <mat-icon>exit_to_app</mat-icon>
+                                    Logout
+                                </button></li>
+                    </ul>
+                </div>
+                
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+                    <li class="nav-item m-2">
+                        <button type="button" class="btn btn-outline-danger " role="button" data-bs-dismiss="offcanvas"
+                            aria-label="Close" (click)="openDialog()">
+                            <mat-icon>add_circle_outline</mat-icon>
+                            <span class="m-2">Adicionar tarefa</span>
+                        </button>
+                    </li>
+                </ul>
+                <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-danger" type="submit">Search</button>
+                </form>
+            </div>
+            <div fxLayout="row" fxShow="false" fxShow.gt-sm class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-danger" role="button" data-bs-dismiss="offcanvas"
+                    aria-label="Close" (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    Sair
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>

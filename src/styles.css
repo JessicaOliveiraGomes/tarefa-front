@@ -1,6 +1,9 @@
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body { 
+    margin: 0; 
+    font-family: cursive,'Times New Roman', Times, serif;
+    background-color: #F2F2F2;}
 
 
 /* Color Theme Swatches in Hex */
