@@ -8,6 +8,7 @@ import {
 import { ITarefa } from 'src/app/model/Itarefa';
 import { MatDialog } from '@angular/material/dialog';
 import { FormComponentComponent } from '../form-component/form-component.component';
+import { InputModalityDetector } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-list-component',
@@ -123,14 +124,13 @@ export class ListComponentComponent implements OnInit {
   }
 
   openDialogWithData(tarefa: ITarefa) {
-    const dialogRef = this.dialog.open(FormComponentComponent, {
-      data: tarefa,
-    });
+    const dialogRef = this.dialog.open(FormComponentComponent, { data: tarefa });
     dialogRef.afterClosed().subscribe((result) => {
       this.inicializarTodos();
     });
   }
 
+  @Input()
   excluir(id: number) {
     this.tarefaServiceService.excluir(id).subscribe(
       (data) => {

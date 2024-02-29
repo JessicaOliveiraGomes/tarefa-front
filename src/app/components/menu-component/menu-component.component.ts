@@ -3,6 +3,7 @@ import { FormComponentComponent } from '../form-component/form-component.compone
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { Injectable } from '@angular/core';
+import { TarefaServiceService } from 'src/app/service/tarefa-service.service';
 
 @Component({
   selector: 'app-menu-component',
@@ -12,7 +13,9 @@ import { Injectable } from '@angular/core';
 export class MenuComponentComponent implements OnInit {
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+    public tarefaServiceService: TarefaServiceService,
+    ) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +38,17 @@ export class MenuComponentComponent implements OnInit {
   logout() {
     localStorage.clear();
     window.location.reload()
+    }
+
+    excluir(id: number) {
+      this.tarefaServiceService.excluir(id).subscribe(
+        (data) => {
+          
+        },
+        (erro) => {
+          alert('Erro ao excluir');
+        }
+      );
     }
 
 }
