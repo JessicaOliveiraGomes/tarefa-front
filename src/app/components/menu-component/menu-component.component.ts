@@ -39,16 +39,4 @@ export class MenuComponentComponent implements OnInit {
     localStorage.clear();
     window.location.reload()
     }
-
-    excluir(id: number) {
-      this.tarefaServiceService.excluir(id).subscribe(
-        (data) => {
-          
-        },
-        (erro) => {
-          alert('Erro ao excluir');
-        }
-      );
-    }
-
 }
