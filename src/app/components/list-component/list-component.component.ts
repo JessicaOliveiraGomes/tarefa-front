@@ -130,7 +130,6 @@ export class ListComponentComponent implements OnInit {
     });
   }
 
-  @Input()
   excluir(id: number) {
     this.tarefaServiceService.excluir(id).subscribe(
       (data) => {
