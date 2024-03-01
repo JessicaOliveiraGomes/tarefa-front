@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://localhost:8080/todo'
+  urlApi: 'http://localhost:8081/todo',
+  autenticadorURL: 'http://localhost:8080/realms/master'
 
 };
 

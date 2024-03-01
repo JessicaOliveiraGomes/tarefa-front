@@ -7,13 +7,15 @@
                 <input matInput placeholder="Usuario" formControlName="user">
             </mat-form-field>
             <mat-form-field class="placeholder" style="width: 80%;">
-                <input matInput placeholder="Senha" formControlName="password">
+                <input matInput placeholder="Senha" type="password" formControlName="password">
             </mat-form-field>
 
             <div>
                 <mat-dialog-actions class="d-grid gap-2 d-md-flex justify-content-md-center m-2">
                     <button class="btn btn-outline-danger" role="button" type="button"
                         (click)="onSubmit()">Logar</button>
+                    <button class="btn btn-outline-danger" role="button" type="button"
+                    (click)="cadastrar()">Cadastrar</button>
                     <button mat-button mat-dialog-close class="btn btn-outline-danger" role="button"
                         type="button">Sair</button>
                 </mat-dialog-actions>

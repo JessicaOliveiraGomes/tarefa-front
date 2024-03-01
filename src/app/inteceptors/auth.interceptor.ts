@@ -32,6 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
       });
 
       return next.handle(authReq).pipe(
+        
         catchError((error) => {
           // Intercepta respostas "401 Unauthorized"
           if (
@@ -46,6 +47,10 @@ export class AuthInterceptor implements HttpInterceptor {
           return throwError(() => error);
         })
       );
+    }
+
+    if (!localStorage.getItem('basicAuth')){
+      this.openDialog();
     }
 
     // If there is no token, pass the original request

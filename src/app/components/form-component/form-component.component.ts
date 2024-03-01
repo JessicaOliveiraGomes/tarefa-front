@@ -32,7 +32,7 @@ export class FormComponentComponent implements OnInit {
     });
 
     if (this.data) {
-      this.form.value.id = this.data.id;
+      this.form.controls['id'].setValue(this.data.id);
       this.form.controls['nomeTarefa'].setValue(this.data.nomeTarefa);
       this.form.controls['detalhes'].setValue(this.data.detalhes);
       this.form.controls['data'].setValue(this.data.data);

@@ -8,17 +8,15 @@ import { TarefaServiceService } from 'src/app/service/tarefa-service.service';
 @Component({
   selector: 'app-menu-component',
   templateUrl: './menu-component.component.html',
-  styleUrls: ['./menu-component.component.css']
+  styleUrls: ['./menu-component.component.css'],
 })
 export class MenuComponentComponent implements OnInit {
+  constructor(
+    public dialog: MatDialog,
+    public tarefaServiceService: TarefaServiceService
+  ) {}
 
-
-  constructor(public dialog: MatDialog,
-    public tarefaServiceService: TarefaServiceService,
-    ) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   openDialog() {
     const dialogRef = this.dialog.open(FormComponentComponent);
@@ -27,7 +25,6 @@ export class MenuComponentComponent implements OnInit {
     });
   }
 
-  
   OpenLogin() {
     const dialogRef = this.dialog.open(LoginComponent);
     dialogRef.afterClosed().subscribe((result) => {
@@ -36,7 +33,17 @@ export class MenuComponentComponent implements OnInit {
   }
 
   logout() {
-    localStorage.clear();
-    window.location.reload()
-    }
+    this.tarefaServiceService.logout().subscribe(
+      (data) => {
+        localStorage.clear();
+        window.location.reload();
+      },
+      (erro) => {
+        alert('Falha ao deslogar');
+      }
+    );
+  }
+  cadastrar() {
+    window.open('http://localhost:8081', '_blank');
+  }
 }
