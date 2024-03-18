@@ -5,7 +5,7 @@
       <div class="p-4">
         <h2> {{agrupamento.lista}}
           <button class="btn btn-outline" type="button"
-            (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button>
+            (click)="openDialog(agrupamento.lista)"><mat-icon>add_circle_outline</mat-icon></button>
         </h2>
 
         <div cdkDropList [cdkDropListData]="agrupamento.tasks" (cdkDropListDropped)="drop($event)"

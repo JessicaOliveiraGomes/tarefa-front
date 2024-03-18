@@ -116,8 +116,16 @@ export class ListComponentComponent implements OnInit {
     }
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(FormComponentComponent, { data: null });
+  openDialog(lista:string) {
+    const dialogRef = this.dialog.open(FormComponentComponent, { data: {    
+      id: null,
+      nomeTarefa: '',
+      detalhes: null,
+      data: Date,
+      lista: lista,
+      concluido: false,
+      checked: false
+    }});
     dialogRef.afterClosed().subscribe((result) => {
       this.inicializarTodos();
     });

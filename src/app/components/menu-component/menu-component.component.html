@@ -20,46 +20,29 @@
                         <mat-icon>account_circle</mat-icon>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-primary"
-                            role="button" data-bs-dismiss="offcanvas" aria-label="Close" (click)="cadastrar()">
-                            <mat-icon>add_circle_outline</mat-icon>
-                            Cadastrar
+                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-outline-primary"
+                            role="button" data-bs-dismiss="offcanvas" aria-label="Close" (click)="OpenLogin()">
+                            <span>Login</span>
                         </button></li>
                         <li class="dropdown-item" href="#"> <button type="button" class="btn btn-outline-primary"
-                            role="button" data-bs-dismiss="offcanvas" aria-label="Close"
-                                    (click)="OpenLogin()">
-                                    <span>Login</span>
-                                </button></li>
-                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-primary"
-                                    role="button" data-bs-dismiss="offcanvas" aria-label="Close" (click)="logout()">
-                                    <mat-icon>exit_to_app</mat-icon>
-                                    Logout
-                                </button></li>
-               
+                                role="button" data-bs-dismiss="offcanvas" aria-label="Close" (click)="cadastrar()">
+                                 Add Conta
+                            </button></li>
+                        <li class="dropdown-item" href="#"> <button type="button" class="btn btn-primary" role="button"
+                                data-bs-dismiss="offcanvas" aria-label="Close" (click)="logout()">
+                                <mat-icon>exit_to_app</mat-icon>
+                                Logout
+                            </button></li>
+
                     </ul>
                 </div>
-                
+
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
                     <li class="nav-item m-2">
                         <button type="button" class="btn btn-outline-danger " role="button" data-bs-dismiss="offcanvas"
                             aria-label="Close" (click)="openDialog()">
                             <mat-icon>add_circle_outline</mat-icon>
                             <span class="m-2">Adicionar tarefa</span>
-                        </button>
-                    </li>
-                    <li class="nav-item m-2">
-                        <button type="button" class="btn btn-outline-danger" role="button" data-bs-dismiss="offcanvas"
-                            aria-label="Close" (click)="openDialog()">
-                            <mat-icon>create</mat-icon>
-                            <span class="m-2">Editar tarefa</span>
-
-                        </button>
-                    </li>
-                    <li class="nav-item m-2">
-                        <button type="button" class="btn btn-outline-danger" role="button" data-bs-dismiss="offcanvas"
-                            aria-label="Close" (click)="openDialog()">
-                            <mat-icon>delete</mat-icon>
-                            <span class="m-2">Excluir tarefa</span>
                         </button>
                     </li>
                 </ul>
